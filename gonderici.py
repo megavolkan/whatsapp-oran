@@ -24,9 +24,9 @@ def mesajlari_gonder():
     time.sleep(5)  # Başlamadan önce 5 saniye bekle
 
     for kisi in kullanicilar:
-        isim = kisi.get('name', 'Bilinmeyen Kişi')
-        telefon = kisi.get('tel', '')
-        gorsel_id = kisi.get('id', '')
+        isim = kisi.get("name", "Bilinmeyen Kişi")
+        telefon = kisi.get("tel", "")
+        gorsel_id = kisi.get("id", "")
 
         # Telefon numarası boşsa atla
         if not telefon:
@@ -44,7 +44,7 @@ def mesajlari_gonder():
             gorsel_dosya = gorsel_id
 
         gorsel_yolu = os.path.join(GORSEL_KLASORU, gorsel_dosya)
-        mesaj_metni = f"Merhaba {isim}, size özel görseliniz ekte yer almaktadır."
+        mesaj_metni = f"Merhaba {isim}, size özel oran görseliniz ekte yer almaktadır."
 
         # Görselin varlığını kontrol et
         if os.path.exists(gorsel_yolu):
