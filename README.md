@@ -8,41 +8,35 @@ Bu proje, bir JSON listesindeki kişilere özel görselleri ve mesajları WhatsA
 - **Google Chrome**: Gönderim işlemi için Chrome tarayıcısı gereklidir.
 - **WhatsApp Web**: Tarayıcınızda WhatsApp Web'in açık ve giriş yapılmış olması gerekir.
 
-## 🚀 Kurulum
+## 🚀 Kurulum ve Hazırlık
 
-Projeyi başka bir bilgisayara kurmak için aşağıdaki adımları izleyin:
+### 1. Python Yükleme
+- **Windows:** [python.org](https://www.python.org/downloads/) adresinden indirin. Yüklerken **"Add Python to PATH"** kutucuğunu mutlaka işaretleyin.
+- **Mac/Linux:** Genellikle yüklü gelir. Kontrol için terminale `python3 --version` yazın.
 
-1. **Projeyi İndirin:**
-   GitHub üzerinden ZIP olarak indirin veya terminalden kopyalayın:
-   ```bash
-   git clone https://github.com/megavolkan/whatsapp-oran.git
-   cd whatsapp-oran
-   ```
+### 2. Projeyi İndirme
+Projeyi GitHub'dan ZIP olarak indirin ve klasöre çıkarın veya terminalden çekin:
+```bash
+git clone https://github.com/megavolkan/whatsapp-oran.git
+cd whatsapp-oran
+```
 
-2. **Gerekli Kütüphaneleri Kurun (Tek Komut):**
-   Node.js'deki `npm install` komutunun Python'daki karşılığıdır:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## 📂 Dosya Yapısı
-
-- `gonderici.py`: Ana çalışma dosyası.
-- `liste.json`: Kişi bilgilerinin (isim, tel, görsel ID) bulunduğu dosya.
-- `gorseller/`: Gönderilecek görsellerin bulunduğu klasör (Bu klasörü oluşturmayı unutmayın).
-- `requirements.txt`: Gerekli Python kütüphanelerinin listesi.
+### 3. Bağımlılıkları Kurma (npm install gibi)
+Terminali (veya CMD) proje klasöründe açın ve şu komutu çalıştırın:
+- **Windows:** `pip install -r requirements.txt`
+- **Mac/Linux:** `pip3 install -r requirements.txt`
 
 ## 🛠️ Kullanım
 
-1. **Verilerinizi Hazırlayın:** `liste.json` dosyasını güncelleyin ve görselleri `gorseller/` klasörüne ekleyin.
+1. **Verileri Hazırlayın:** `liste.json` dosyasını güncelleyin ve gönderilecek görselleri `gorseller/` klasörüne ekleyin.
 2. **Uygulamayı Çalıştırın:**
-   ```bash
-   python gonderici.py
-   ```
-3. **Bekleyin:** Uygulama tarayıcıyı açacak ve mesajları sırasıyla gönderecektir. Her mesaj arasında spam koruması için bekleme süreleri bulunmaktadır.
+   - **Windows:** `python gonderici.py`
+   - **Mac/Linux:** `python3 gonderici.py`
+3. **Süreci İzleyin:** Uygulama tarayıcıyı açacak ve mesajları sırasıyla gönderecektir.
 
-## ⚠️ Önemli Notlar
+## ⚠️ Önemli Notlar ve İpuçları
 
-- Gönderim başlamadan önce WhatsApp Web'in tarayıcıda **varsayılan profilinizde** açık olduğundan emin olun.
-- İlk gönderimde tarayıcı penceresi açıldığında müdahale etmeyin, sistem otomatik olarak mesajı yazıp görseli ekleyecektir.
-- Spam olarak algılanmamak için günlük gönderim limitlerine dikkat edin.
+- **WhatsApp Web:** Tarayıcınızda (Chrome) WhatsApp Web'in **varsayılan profilinizde** açık ve giriş yapılmış olduğundan emin olun.
+- **Müdahale Etmeyin:** İlk gönderimde tarayıcı penceresi açıldığında fareye veya klavyeye dokunmayın; sistem otomatik olarak mesajı yazıp görseli ekleyecektir.
+- **Bekleme Süreleri:** Spam filtresine takılmamak için her mesaj arasında 30 saniyelik bir bekleme süresi ayarlanmıştır (`gonderici.py` içinden değiştirilebilir).
+- **Hata Alırsanız:** Windows'ta `python` komutu çalışmazsa `py gonderici.py` komutunu deneyebilirsiniz.
